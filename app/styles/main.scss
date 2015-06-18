@@ -1,7 +1,8 @@
 // bower:scss
 // endbower
 
-//BREAKPOINTS
+// BREAKPOINTS
+$break-xl: 1400px;
 $break-lrg: 1263px;
 $break-form-lrg: 1021px;
 $break-med: 1010px;
@@ -10,10 +11,37 @@ $break-sm: 720px;
 $break-sm-footer-tweak: 600px;
 $break-sm-clients-tweak: 588px;
 $break-sm-tweak: 550px;
-$break-xs: 35020;
+$break-xs: 350px;
 
-//VARIABLES
+// VARIABLES
 $link-color: #f48119;
+
+// KEY-FRAMES
+@-webkit-keyframes bgrdRotate {
+  0% {transform: rotate(359deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes bgrdRotate {
+  0% {transform: rotate(359deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@-webkit-keyframes socialWiggle {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(20deg);}
+  50% {transform: rotate(0deg);}
+  75% {transform: rotate(-20deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes socialWiggle {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(6deg);}
+  50% {transform: rotate(0deg);}
+  75% {transform: rotate(-6deg);}
+  100% {transform: rotate(0deg);}
+}
 
 body {
   color: #333;
@@ -53,26 +81,34 @@ a {
 
 .primary-nav-wrapper {
   background-color: #fff;
-  height: 75px;
+  height: 53px;
   padding-top: 26px;
-  padding-bottom: 6px;
+  padding-bottom: 22px;
   position: absolute;
-  top: 49px;
+  top: 46px;
   width: 100%;
   z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  transition-property: height, padding-top, padding-bottom;
 
   h1 {
-    height: 67px;
+    font-size: 41px;
+    height: 53px;
   }
 
   .activ8-logo {
     margin-right: 30px;
     padding-left: 50px;
-    width: 330px;
+    width: 300px;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
   }
 
   .primary-nav {
-    bottom: 10px;
+    bottom: 8px;
     display: inline-block;
     list-style: none;
     margin-left: 20px;
@@ -81,13 +117,34 @@ a {
 
   li {
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
     margin-right: 40px;
     text-transform: uppercase;
   }
 
   li:last-of-type {
     margin-right: 0;
+  }
+
+}
+
+.primary-nav-wrapper.primary-nav-wrapper-shrink {
+  height: 35px;
+  opacity: .93;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  position: fixed;
+  top: 0;
+
+  h1 {
+    height: 35px;
+  }
+
+  .activ8-logo {
+    margin-right: 30px;
+    padding-left: 50px;
+    padding-bottom: 3px;
+    width: 200px;
   }
 
 }
@@ -100,12 +157,13 @@ a {
   padding: 0;
 }
 
-.intro-wrapper:before {
+.intro-background {
     content: "";
     height: 200%;
     position: absolute;
     top: -28%;
-    width: 102%;
+    left: -2%;
+    width: 105%;
     z-index: -1;
     background: url("../images/header-ring-green-v2.png") no-repeat;
     -webkit-transform: rotate(0deg);
@@ -114,7 +172,7 @@ a {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
     background-position: center;
-    background-size: 115%;
+    background-size: 113%;
   }
 
 .contact-us-background {
@@ -190,20 +248,21 @@ a {
   max-width: 1280px;
   padding: 100px 80px;
   text-align: center;
+  margin: 0 auto;
 }
 
-#whatWeDo:before {
+.what-we-do-background {
   content: "";
-  height: 100%;
+  height: 118%;
   position: absolute;
   width: 100%;
   z-index: -1;
   background: url("../images/services-ring-orange.png") no-repeat;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
   background-position: center;
   background-size: 120%;
 }
@@ -232,6 +291,7 @@ a {
 
     img {
       width: 50%;
+      max-width: 150px;
     }
 
     p {
@@ -243,7 +303,7 @@ a {
 
 }
 
-#ourClients:before {
+.our-clients-background {
   content: "";
   height: 100%;
   position: absolute;
@@ -282,25 +342,38 @@ a {
 
 }
 
-#contact:before {
+.contact-background-element {
   content: "";
-  height: 120%;
+  bottom: -10%;
+  height: 225%;
+  left: -5%;
   position: absolute;
-  width: 100%;
+  width: 109%;
   z-index: -1;
   background: url("../images/contact-ring-blue.png") no-repeat;
-  background-color: #0080b2;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  background-position: center bottom;
-  background-size: 88%;
+  background-position: center;
+  background-size: 80%;
+  -webkit-animation: bgrdRotate 145s infinite linear;
+  animation: bgrdRotate 145s infinite linear;
+}
+
+.contact-background-color {
+  background-color: #0080b2;
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 
 #contact {
-  padding-bottom: 45px;
+  // padding-bottom: 45px;
+  height: 540px;
 
   .copy-and-social-wrapper {
     display: block;
@@ -319,8 +392,19 @@ a {
     margin-left: -14px;
 
     img {
+      bottom: 0;
       margin-right: 12px;
+      position: relative;
       width: 35px;
+      -webkit-transition: bottom 0.2s cubic-bezier(0, 0, 0.35, 1);
+      -moz-transition: bottom 0.2s cubic-bezier(0, 0, 0.35, 1);
+      transition: bottom 0.2s cubic-bezier(0, 0, 0.35, 1);
+    }
+
+    img:hover {
+      bottom: 7px;
+      -webkit-animation: socialWiggle .28s 2 ease;
+      animation: socialWiggle .28s 2 ease;
     }
   }
 
@@ -366,6 +450,8 @@ a {
       text-transform: uppercase;
       width: 150px;
       height: 38px;
+      -webkit-transition: .75s background-color, .75s color;
+      -moz-transition: .75s background-color, .75s color;
       transition: .75s background-color, .75s color;
     }
 
@@ -403,6 +489,14 @@ footer {
       padding: 0 14px;
     }
   }
+}
+
+@media screen and (min-width: $break-xl) {
+
+  .intro-background {
+    background-size: 1660px;
+  }
+
 }
 
 @media screen and (max-width: $break-lrg) {
@@ -492,16 +586,16 @@ footer {
   }
 
   .primary-nav-wrapper {
-    height: 67px;
-    padding-bottom: 40px;
+    height: 78px;
+    padding-top: 24px;
+    padding-bottom: 26px;
     text-align: center;
 
     h1 {
-      height: 67px;
+      // margin-bottom: 15px;
     }
 
     .activ8-logo {
-      width: 300px;
       padding-left: 0;
       margin-right: 0;
     }
@@ -527,13 +621,18 @@ footer {
 
   }
 
-  .intro-wrapper:before
+  .primary-nav-wrapper.primary-nav-wrapper-shrink {
+    height: 58px;
+  }
+
+  .intro-background
     {
-      height: 160%;
-      width: 102%;
       background: url("../images/header-ring-green-v2.png") no-repeat;
       background-position: center;
       background-size: 120%;
+      height: 180%;
+      left: -7%;
+      width: 116%;
     }
 
   #aboutUs {
@@ -591,7 +690,7 @@ footer {
 
   }
 
-  #ourClients:before {
+  .our-clients-background {
     background-size: 183%;
   }
 
@@ -599,13 +698,16 @@ footer {
 
 @media screen and (max-width: $break-form-med) {
 
-  #contact:before {
-    background-size: 150%;
-    background-position: center;
-    height: 100%;
+  .contact-background-element {
+    background-size: 110%;
+    bottom: -20%;
+    height: 150%;
+    width: 150%;
+    left: -25%;
   }
 
   #contact {
+    height: 802px;
     padding-bottom: 0;
 
     .copy-and-social-wrapper {
@@ -694,23 +796,24 @@ footer {
   }
 
   p {
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 13px;
+    line-height: 20px;
   }
 
-  .intro-wrapper:before
+  .intro-background
     {
-      height: 169%;
-      width: 102%;
       background: url("../images/header-ring-green-v2.png") no-repeat;
       background-position: center;
       background-size: 140%;
+      height: 183%;
+      left: -8%;
+      width: 119%;
     }
 
   .contact-us-background {
     height: 25px;
-    padding-top: 18px;
-    padding-bottom: 15px;
+    padding-top: 13px;
+    padding-bottom: 7px;
 
     .contact-us-wrapper {
       text-align: center;
@@ -739,12 +842,12 @@ footer {
   }
 
   .primary-nav-wrapper {
-    height: 75px;
+    height: 60px;
     padding-top: 18px;
-    padding-bottom: 12px;
+    padding-bottom: 18px;
 
     h1 {
-      height: 50px;
+      height: 39px;
     }
 
     .activ8-logo {
@@ -834,7 +937,7 @@ footer {
 
   }
 
-  #whatWeDo:before {
+  .what-we-do-background {
     background-size: 235%;
   }
 
@@ -879,7 +982,7 @@ footer {
 
 @media screen and (max-width: $break-sm-clients-tweak) {
 
-  #ourClients:before {
+  .our-clients-background {
     background-size: 320%;
   }
 
@@ -915,19 +1018,20 @@ footer {
 
 @media screen and (max-width: $break-sm-tweak) {
 
-  .intro-wrapper:before {
-    height: 160%;
-    width: 102%;
+  .intro-background {
     background: url("../images/header-ring-green-v2.png") no-repeat;
     background-position: center;
-    background-size: 195%;
+    background-size: 140%;
+    height: 175%;
+    left: -29%;
+    width: 160%;
   }
 
   #aboutUs {
-    height: 662px;
+    height: 550px;
 
     .about-us-copy {
-      top: 24%;
+      top: 30%;
     }
   }
 
@@ -952,13 +1056,16 @@ footer {
   
   }
 
-
-  #whatWeDo:before {
+  .what-we-do-background {
     background-size: 300%;
   }
 
-  #contact:before {
-    background-size: 200%;
+  .contact-background-element {
+    background-size: 100%;
+    bottom: -30%;
+    height: 170%;
+    width: 210%;
+    left: -55%;
   }
 
 }
@@ -970,7 +1077,7 @@ footer {
   }
 
   p {
-    font-size: 14px;
+    font-size: 13bowpx;
     line-height: 20px;
   }
 

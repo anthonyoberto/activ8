@@ -20,8 +20,21 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+<!--
+    <nav class="primary-nav-wrapper fixed-on-scroll" data-0="position: absolute; top: !46px;" data-46="top:!0; position: fixed;">
+-->
+
+<!-- Skrollr implementation effects breakpoints
+      <h1 data-46="height: 53px;" data-180="height: 44px;">
+        <img class="activ8-logo" src="images/activ8-logo-2x.png" alt="Activ8 360 logo" data-46="width: 300px;" data-180="width: 250px">
+      </h1>
+-->
+
     <nav class="primary-nav-wrapper">
-      <a href="/"><h1><img class="activ8-logo" src="images/activ8-logo-2x.png" alt="Activ8 360 logo"></h1></a>
+      <h1>
+        <img class="activ8-logo" src="images/activ8-logo-2x.png" alt="Activ8 360 logo">
+      </h1>
+
       <ul class="primary-nav">
         <li><a href="#aboutUs">who we are</a></li>
         <li><a href="#whatWeDo">what we do</a></li>
@@ -31,6 +44,7 @@
     </nav>
 
     <section class="intro-wrapper">
+      <div class="intro-background" data-0="transform: rotate(0deg);" data-600="transform: rotate(20deg);"></div>
       <div class="contact-us-background">
           <div class="contact-us-wrapper">
             <div class="email">
@@ -58,6 +72,7 @@
     </section>
 
     <section id="whatWeDo">
+      <div class="what-we-do-background" data-bottom-top="top: 0px;" data-top-bottom="top: -90px;"></div>
       <div class="section-wrapper">
 
         <div class="center-copy">
@@ -85,6 +100,8 @@
     </section>
 
     <section id="ourClients">
+      <div class="our-clients-background"></div>
+
       <div class="section-wrapper">
 
         <div class="client-copy">
@@ -95,31 +112,33 @@
         </div>
 
         <div class="client-logo-grid">
-          <img src="http://placehold.it/145x100" alt="tbd">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
+          <img src="http://placehold.it/145x100" alt="#" data--100-bottom="opacity: 0;" data--200-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--125-bottom="opacity: 0;" data--225-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--150-bottom="opacity: 0;" data--250-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--175-bottom="opacity: 0;" data--275-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--200-bottom="opacity: 0;" data--300-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--225-bottom="opacity: 0;" data--325-bottom="opacity: 1;">
 
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
+          <img src="http://placehold.it/145x100" alt="#" data--250-bottom="opacity: 0;" data--350-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--275-bottom="opacity: 0;" data--375-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--300-bottom="opacity: 0;" data--400-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--325-bottom="opacity: 0;" data--425-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--350-bottom="opacity: 0;" data--450-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--375-bottom="opacity: 0;" data--475-bottom="opacity: 1;">
 
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
-          <img src="http://placehold.it/145x100" alt="#">
+          <img src="http://placehold.it/145x100" alt="#" data--400-bottom="opacity: 0;" data--500-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--425-bottom="opacity: 0;" data--525-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--450-bottom="opacity: 0;" data--550-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--475-bottom="opacity: 0;" data--575-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--500-bottom="opacity: 0;" data--600-bottom="opacity: 1;">
+          <img src="http://placehold.it/145x100" alt="#" data--525-bottom="opacity: 0;" data--625-bottom="opacity: 1;">
         </div>
       </div>
     </section>
 
     <section id="contact">
+      <div class="contact-background-element"></div>
+      <div class="contact-background-color"></div>
       <div class="section-wrapper">
 
         <div class="copy-and-social-wrapper">
@@ -174,9 +193,20 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/skrollr/src/skrollr.js"></script>
+    <script src="bower_components/classie/classie.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script type="text/javascript">
+      if (Modernizr.touch) {
+        skrollr.init().destroy();
+      } else {
+        var s = skrollr.init();
+      }
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -190,6 +220,7 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/nav-animation.js"></script>
         <!-- endbuild -->
 </body>
 </html>
